@@ -26,7 +26,7 @@ public class Program {
 			char answer=sc.next().charAt(0);
 			
 			System.out.print("Name: ");
-			sc.nextLine	();
+			sc.nextLine();
 			String name=sc.nextLine();
 			System.out.print("Hours: ");
 			Integer hours=sc.nextInt();
