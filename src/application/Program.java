@@ -16,7 +16,7 @@ public class Program {
 		Scanner sc = new Scanner(System.in);
 		List<Employee> employee = new ArrayList<>();
 		
-		System.out.println("Enter the number of employees: ");
+		System.out.print("Enter the number of employees: ");
 		int n=sc.nextInt();
 		
 		for (int i=1;i<=n;i++) {
@@ -26,7 +26,7 @@ public class Program {
 			char answer=sc.next().charAt(0);
 			
 			System.out.print("Name: ");
-			sc.nextLine();
+			sc.nextLine	();
 			String name=sc.nextLine();
 			System.out.print("Hours: ");
 			Integer hours=sc.nextInt();
@@ -36,22 +36,21 @@ public class Program {
 			if (answer=='y') {
 				System.out.println("Additional charge: ");
 				Double additionalCharge=sc.nextDouble();
-				Employee emp = new OutsourcedEmployee(name,hours,valuePerHour,additionalCharge);
-				employee.add(emp);
+				employee.add(new OutsourcedEmployee(name,hours,valuePerHour,additionalCharge));
 					
 			} else 
 			
 			{
-				Employee emp = new Employee(name,hours,valuePerHour);
-				employee.add(emp);
+				employee.add(new Employee(name,hours,valuePerHour));
 			}
 		
 			}
 		
+		System.out.println();	
 		System.out.println("PAYMENTS:");
 		
 		for (Employee emp : employee) {
-			System.out.println(emp);
+			System.out.println(emp.getName()+" - $"+String.format("%.2f", emp.payment()));
 		}
 			
 		sc.close();
