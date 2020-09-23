@@ -37,5 +37,14 @@ public class Employee {
 	public Double payment() {
 		return valuePerHour*hours;	
 	}
+	@Override
+	public String toString() {
+		return name
+			   +" - $"
+	           +String.format("%.2f", payment());
+		       
+	}
+	
+	
 	
 }
